@@ -1,6 +1,6 @@
 <?php
 
-namespace GGInnovative\Larafirebase\Exceptions;
+namespace CodeCoveVienna\Larafirebase\Exceptions;
 
 use Exception;
 

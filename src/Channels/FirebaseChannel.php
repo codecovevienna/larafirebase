@@ -1,6 +1,6 @@
 <?php
 
-namespace GGInnovative\Larafirebase\Channels;
+namespace CodeCoveVienna\Larafirebase\Channels;
 
 use Illuminate\Notifications\Notification;
 
@@ -11,7 +11,7 @@ class FirebaseChannel
      */
     public function send($notifiable, Notification $notification)
     {
-        /** @var \GGInnovative\Larafirebase\FirebaseMessage $message */
+        /** @var \CodeCoveVienna\Larafirebase\FirebaseMessage $message */
         $message = $notification->toFirebase($notifiable);
     }
 }

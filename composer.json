@@ -1,17 +1,17 @@
 {
-    "name": "gg-innovative/larafirebase",
+    "name": "codecovevienna/larafirebase",
     "description": "Laravel Firebase Cloud Messaging.",
-    "homepage": "https://github.com/gg-innovative/larafirebase",
+    "homepage": "https://github.com/codecovevienna/larafirebase",
     "license": "MIT",
     "authors": [
         {
-            "name": "Gentrit Abazi",
-            "email": "gentritabazi01@gmail.com"
+            "name": "Codecove Vienna",
+            "email": "tools@codecove.at"
         }
     ],
     "autoload": {
         "psr-4": {
-            "GGInnovative\\Larafirebase\\": "src/"
+            "CodeCoveVienna\\Larafirebase\\": "src/"
         },
         "files" : [
             "src/Helpers/All.php"
@@ -30,7 +30,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "GGInnovative\\Larafirebase\\Providers\\LarafirebaseServiceProvider"
+                "CodeCoveVienna\\Larafirebase\\Providers\\LarafirebaseServiceProvider"
             ]
         }
     }

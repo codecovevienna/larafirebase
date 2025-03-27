@@ -1,6 +1,6 @@
 <?php
 
-namespace GGInnovative\Larafirebase\Services;
+namespace CodeCoveVienna\Larafirebase\Services;
 
 use Google\Client;
 use Illuminate\Http\Client\Response;

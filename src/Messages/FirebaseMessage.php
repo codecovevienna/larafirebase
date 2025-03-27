@@ -1,8 +1,8 @@
 <?php
 
-namespace GGInnovative\Larafirebase\Messages;
+namespace CodeCoveVienna\Larafirebase\Messages;
 
-use GGInnovative\Larafirebase\Services\Larafirebase;
+use CodeCoveVienna\Larafirebase\Services\Larafirebase;
 
 class FirebaseMessage extends Larafirebase
 {

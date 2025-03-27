@@ -1,6 +1,6 @@
 <?php
 
-namespace GGInnovative\Larafirebase\Facades;
+namespace CodeCoveVienna\Larafirebase\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

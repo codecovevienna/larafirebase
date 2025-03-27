@@ -1,11 +1,11 @@
 <?php
 
-namespace GGInnovative\Larafirebase\Providers;
+namespace CodeCoveVienna\Larafirebase\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Notifications\ChannelManager;
-use GGInnovative\Larafirebase\Services\Larafirebase;
-use GGInnovative\Larafirebase\Channels\FirebaseChannel;
+use CodeCoveVienna\Larafirebase\Services\Larafirebase;
+use CodeCoveVienna\Larafirebase\Channels\FirebaseChannel;
 
 class LarafirebaseServiceProvider extends ServiceProvider
 {

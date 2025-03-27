@@ -1,14 +1,14 @@
 <p align="center"><img src="/art/cover-v2.png" height="400"></p>
 
 <p align="center">
-    <a href="https://packagist.org/packages/gg-innovative/larafirebase">
-        <img src="https://img.shields.io/packagist/dt/gg-innovative/larafirebase" alt="Total Downloads">
+    <a href="https://packagist.org/packages/codecovevienna/larafirebase">
+        <img src="https://img.shields.io/packagist/dt/codecovevienna/larafirebase" alt="Total Downloads">
     </a>
-    <a href="https://packagist.org/packages/gg-innovative/larafirebase">
-        <img src="https://img.shields.io/packagist/v/gg-innovative/larafirebase" alt="Latest Stable Version">
+    <a href="https://packagist.org/packages/codecovevienna/larafirebase">
+        <img src="https://img.shields.io/packagist/v/codecovevienna/larafirebase" alt="Latest Stable Version">
     </a>
-    <a href="https://packagist.org/packages/gg-innovative/larafirebase">
-        <img src="https://img.shields.io/packagist/l/gg-innovative/larafirebase" alt="License">
+    <a href="https://packagist.org/packages/codecovevienna/larafirebase">
+        <img src="https://img.shields.io/packagist/l/codecovevienna/larafirebase" alt="License">
     </a>
 </p>
 
@@ -29,7 +29,7 @@ Follow the steps below to install the package.
 **Install via Composer**
 
 ```
-composer require gg-innovative/larafirebase
+composer require codecovevienna/larafirebase
 ```
 
 **Copy Configuration**
@@ -37,7 +37,7 @@ composer require gg-innovative/larafirebase
 Run the following command to publish the `larafirebase.php` config file:
 
 ```bash
-php artisan vendor:publish --provider="GGInnovative\Larafirebase\Providers\LarafirebaseServiceProvider"
+php artisan vendor:publish --provider="CodeCoveVienna\Larafirebase\Providers\LarafirebaseServiceProvider"
 ```
 
 **Configure larafirebase.php as needed**
@@ -54,7 +54,7 @@ Follow the steps below to find how to use the package.
 Example usage in any class you want to use Larafirebase:
 
 ```php
-use GGInnovative\Larafirebase\Facades\Larafirebase;
+use CodeCoveVienna\Larafirebase\Facades\Larafirebase;
 
 class MyController
 {
@@ -105,7 +105,7 @@ Example usage in **Notification** class:
 
 ```php
 use Illuminate\Notifications\Notification;
-use GGInnovative\Larafirebase\Messages\FirebaseMessage;
+use CodeCoveVienna\Larafirebase\Messages\FirebaseMessage;
 
 class SendBirthdayReminder extends Notification
 {
