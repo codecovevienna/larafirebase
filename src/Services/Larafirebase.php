@@ -105,10 +105,14 @@ class Larafirebase
                     'title' => $this->title,
                     'body' => $this->body,
                     'image' => $this->image,
-                    'click_action' => $this->clickAction,
                 ],
             ],
         ];
+        
+        if($this->clickAction) {
+            $payload['message']['notification']['custom_data'] = $this->clickAction;
+        }
+
 
         if($this->token) {
             $payload['message']['token'] = $this->token;
