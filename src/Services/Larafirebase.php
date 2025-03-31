@@ -117,15 +117,14 @@ class Larafirebase
                 ],
             ],
         ];
-         
+
         if($this->icon) {
-            $payload['message']['icon'] = $this->icon;
+            $payload['message']['android']['notification']['icon'] = $this->icon;
         }
         
         if($this->clickAction) {
-            $payload['message']['notification']['custom_data'] = $this->clickAction;
+            $payload['message']['android']['notification']['click_action'] = $this->clickAction;
         }
-
 
         if($this->token) {
             $payload['message']['token'] = $this->token;
