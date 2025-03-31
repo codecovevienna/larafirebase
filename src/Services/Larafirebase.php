@@ -16,6 +16,8 @@ class Larafirebase
 
     private $image;
 
+    private $icon;
+
     private $additionalData;
 
     private $sound;
@@ -47,6 +49,13 @@ class Larafirebase
     public function withImage($image)
     {
         $this->image = $image;
+
+        return $this;
+    }
+    
+    public function withIcon($icon)
+    {
+        $this->icon = $icon;
 
         return $this;
     }
@@ -108,6 +117,10 @@ class Larafirebase
                 ],
             ],
         ];
+         
+        if($this->icon) {
+            $payload['message']['icon'] = $this->icon;
+        }
         
         if($this->clickAction) {
             $payload['message']['notification']['custom_data'] = $this->clickAction;
