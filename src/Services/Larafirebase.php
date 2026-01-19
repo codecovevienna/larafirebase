@@ -30,6 +30,10 @@ class Larafirebase
 
     private $fromRaw;
 
+    private $hasAppleMutableContent;
+
+    private $applePayload;
+
     public const API_URI = 'https://fcm.googleapis.com/v1/projects/:projectId/messages:send';
 
     public function withTitle($title)
@@ -102,6 +106,20 @@ class Larafirebase
         return $this;
     }
 
+    public function withApplePayload($applePayload)
+    {
+        $this->applePayload = $applePayload;
+
+        return $this;
+    }
+
+    public function withHasAppleMutableContent($hasAppleMutableContent)
+    {
+        $this->hasAppleMutableContent = $hasAppleMutableContent;
+
+        return $this;
+    }
+
     public function sendNotification()
     {
         if($this->fromRaw) {
@@ -117,6 +135,19 @@ class Larafirebase
                 ],
             ],
         ];
+
+        if($this->applePayload) {
+            $payload['message']['apns']['payload'] = $this->applePayload;
+        }
+
+        if($this->hasAppleMutableContent) {
+            $payload['message']['apns']['payload'] = [
+                'aps' => [
+                    'mutable-content' => 1, 
+                    'content-available' => 1
+                ]
+            ];
+        }
 
         if($this->icon) {
             $payload['message']['android']['notification']['icon'] = $this->icon;
