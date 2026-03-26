@@ -25,7 +25,7 @@ class Larafirebase
     private $token;
 
     private $topic;
-    
+
     private $clickAction;
 
     private $fromRaw;
@@ -33,6 +33,8 @@ class Larafirebase
     private $hasAppleMutableContent;
 
     private $applePayload;
+
+    private $tokens = [];
 
     public const API_URI = 'https://fcm.googleapis.com/v1/projects/:projectId/messages:send';
 
@@ -56,7 +58,7 @@ class Larafirebase
 
         return $this;
     }
-    
+
     public function withIcon($icon)
     {
         $this->icon = $icon;
@@ -91,7 +93,7 @@ class Larafirebase
 
         return $this;
     }
-    
+
     public function withClickAction($clickAction)
     {
         $this->clickAction = $clickAction;
@@ -120,6 +122,13 @@ class Larafirebase
         return $this;
     }
 
+    public function withTokens($tokens)
+    {
+        $this->tokens = $tokens;
+        return $this;
+    }
+
+
     public function sendNotification()
     {
         if($this->fromRaw) {
@@ -143,7 +152,7 @@ class Larafirebase
         if($this->hasAppleMutableContent) {
             $payload['message']['apns']['payload'] = [
                 'aps' => [
-                    'mutable-content' => 1, 
+                    'mutable-content' => 1,
                     'content-available' => 1
                 ]
             ];
@@ -152,7 +161,7 @@ class Larafirebase
         if($this->icon) {
             $payload['message']['android']['notification']['icon'] = $this->icon;
         }
-        
+
         if($this->clickAction) {
             $payload['message']['android']['notification']['click_action'] = $this->clickAction;
         }
@@ -172,6 +181,19 @@ class Larafirebase
         if($this->sound) {
             $payload['message']['android']['notification']['sound'] = $this->sound;
             $payload['message']['apns']['payload']['aps']['sound'] = $this->sound;
+        }
+
+        if (!empty($this->tokens)) {
+            $bearerToken = $this->getBearerToken();
+            $apiURL = str_replace(":projectId", config("larafirebase.project_id"), self::API_URI);
+
+            return Http::pool(function ($pool) use ($bearerToken, $apiURL, $basePayload) {
+                foreach ($this->tokens as $token) {
+                    $payload = $basePayload;
+                    $payload["message"]["token"] = $token;
+                    $pool->withHeaders(["Authorization" => "Bearer " . $bearerToken])->post($apiURL, $payload);
+                }
+            });
         }
 
         return $this->callApi($payload);
