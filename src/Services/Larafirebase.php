@@ -187,9 +187,8 @@ class Larafirebase
             $bearerToken = $this->getBearerToken();
             $apiURL = str_replace(":projectId", config("larafirebase.project_id"), self::API_URI);
 
-            return Http::pool(function ($pool) use ($bearerToken, $apiURL, $basePayload) {
+            return Http::pool(function ($pool) use ($bearerToken, $apiURL, $payload) {
                 foreach ($this->tokens as $token) {
-                    $payload = $basePayload;
                     $payload["message"]["token"] = $token;
                     $pool->withHeaders(["Authorization" => "Bearer " . $bearerToken])->post($apiURL, $payload);
                 }

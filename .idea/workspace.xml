@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="567971cc-3903-4b69-a5ae-3b9f659c2fe2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Services/Larafirebase.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/Larafirebase.php" afterDir="false" />
-    </list>
+    <list default="true" id="567971cc-3903-4b69-a5ae-3b9f659c2fe2" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,7 +65,7 @@
       <option name="presentableId" value="Default" />
       <updated>1743082048085</updated>
       <workItem from="1743082049881" duration="457000" />
-      <workItem from="1774556081480" duration="64000" />
+      <workItem from="1774556081480" duration="471000" />
     </task>
     <servers />
   </component>
